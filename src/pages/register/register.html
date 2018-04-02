@@ -1,0 +1,43 @@
+<ion-content class="login-content" padding="">
+    <ion-row class="logo-row">
+        <ion-col>
+        </ion-col>
+        <ion-col width-67="">
+            <img src="http://placehold.it/300x200"/>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+    </ion-row>
+    <div class="login-box">
+        <form>
+            <ion-row>
+                <ion-col>
+                    <ion-list inset="">
+                        <ion-item>
+                            <ion-input name="name"  [(ngModel)]="register.name"  placeholder="{{username}}" required="" type="text">
+                            </ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input name="email" placeholder="Email" required="" type="text">
+                            </ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input  name="password" placeholder="Password" required="" type="password">
+                            </ion-input>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col class="signup-col">
+                    <button class="submit-btn" full="" ion-button="" type="submit">
+                        Login
+                    </button>
+                    <button (click)="doRegister()" block="" class="register-btn" clear="" ion-button="">
+                        Create New Account
+                    </button>
+                </ion-col>
+            </ion-row>
+        </form>
+    </div>
+</ion-content>
