@@ -14,7 +14,7 @@
                 <ion-col>
                     <ion-list inset="">
                         <ion-item>
-                            <ion-input name="name"  [(ngModel)]="register.name"  placeholder="{{username}}" required="" type="text">
+                            <ion-input name="name"   placeholder="Name" required="" type="text">
                             </ion-input>
                         </ion-item>
                         <ion-item>
@@ -33,8 +33,8 @@
                     <button class="submit-btn" full="" ion-button="" type="submit">
                         Login
                     </button>
-                    <button (click)="doRegister()" block="" class="register-btn" clear="" ion-button="">
-                        Create New Account
+                    <button (click)="doLogin()" block="" class="register-btn" clear="" ion-button="">
+                        Login to Account
                     </button>
                 </ion-col>
             </ion-row>

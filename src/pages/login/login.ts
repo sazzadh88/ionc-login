@@ -9,7 +9,7 @@ import { RegisterPage } from '../register/register';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
@@ -20,22 +20,24 @@ import { RegisterPage } from '../register/register';
 export class LoginPage {
 
   loading: any;
-  loginData = { email:'', password:'' };
+  loginData = { email:'sazzad', password:'sazzad' };
   data: any;
 
   constructor(public navCtrl: NavController, public authService: AuthService, public loadingCtrl: LoadingController, private toastCtrl: ToastController) {}
 
   authLogin() {
     this.showLoader();
-    this.authService.login(this.loginData).then((result) => {
-      this.loading.dismiss();
-      this.data = result;
-      localStorage.setItem('token', this.data.access_token);
-      console.log(result);
-    }, (err) => {
-      this.loading.dismiss();
-      this.presentToast(err);
-    });
+
+    // this.authService.login(this.loginData).then((result) => {
+    //   this.loading.dismiss();
+    //   this.data = result;
+    //   localStorage.setItem('token', this.data.access_token);
+    //   console.log(result);
+    // }, (err) => {
+    //   this.loading.dismiss();
+    //   this.presentToast(err);
+    // });
+
   }
 
   register() {
