@@ -13,6 +13,7 @@ import { RegisterPage } from '../register/register';
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
+  providers: [AuthService]
 })
 
 
@@ -28,15 +29,15 @@ export class LoginPage {
   authLogin() {
     this.showLoader();
 
-    // this.authService.login(this.loginData).then((result) => {
-    //   this.loading.dismiss();
-    //   this.data = result;
-    //   localStorage.setItem('token', this.data.access_token);
-    //   console.log(result);
-    // }, (err) => {
-    //   this.loading.dismiss();
-    //   this.presentToast(err);
-    // });
+    this.authService.login(this.loginData).then((result) => {
+      this.loading.dismiss();
+      this.data = result;
+      localStorage.setItem('token', this.data.access_token);
+      console.log(result);
+    }, (err) => {
+      this.loading.dismiss();
+      this.presentToast(err);
+    });
 
   }
 

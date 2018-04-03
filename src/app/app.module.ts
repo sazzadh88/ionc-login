@@ -1,11 +1,10 @@
-import { AuthService } from '../providers/auth-service/auth-service';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { FormsModule }   from '@angular/forms';
-import { Http } from '@angular/http';
+import { HttpModule } from '@angular/http';
 
 
 import { HttpClientModule} from '@angular/common/http';
@@ -27,6 +26,7 @@ import { RegisterPage } from '../pages/register/register';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -39,8 +39,8 @@ import { RegisterPage } from '../pages/register/register';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},Http,HttpClientModule,
-    AuthService
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+   
   ]
 })
 export class AppModule {}

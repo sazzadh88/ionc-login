@@ -9,7 +9,7 @@
         </ion-col>
     </ion-row>
     <div class="login-box">
-        <span>{{model.email}}</span>
+        <span>{{loginData.email}}</span>
         <form (submit)="authLogin()">
             <ion-row>
                 <ion-col>
@@ -30,7 +30,7 @@
                     <button class="submit-btn" full="" ion-button="" type="submit">
                         Login
                     </button>
-                    <button (click)="doRegister()" block="" class="register-btn" clear="" ion-button="">
+                    <button type="button" (click)="doRegister()" block="" class="register-btn" clear="" ion-button="">
                         Create New Account
                     </button>
                 </ion-col>
