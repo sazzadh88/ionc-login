@@ -26,7 +26,7 @@ import { RegisterPage } from '../pages/register/register';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-HttpModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

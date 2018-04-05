@@ -8,6 +8,7 @@ let apiUrl = 'https://app.web/api/';
 
 @Injectable()
 export class AuthService {
+  // private isLoggedIn = false;
 
   constructor(public http: Http) {}
 
@@ -17,6 +18,21 @@ export class AuthService {
         headers.append('Content-Type', 'application/json');
 
         this.http.post(apiUrl+'login', JSON.stringify(credentials), {headers: headers})
+          .subscribe(res => {
+            resolve(res.json());
+            // this.isLoggedIn = true;
+          }, (err) => {
+            reject(err);
+          });
+    });
+  }
+
+  checkPnrAuth(pnr){
+    return new Promise((resolve, reject) => {
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+        this.http.get('http://medurin.com/api/v1/test.php?pnr='+pnr, {headers: headers})
           .subscribe(res => {
             resolve(res.json());
           }, (err) => {

@@ -1,5 +1,62 @@
-
-<ion-content padding>
+<!-- <ion-content padding>
   <button ion-button block color="primary" (click)="doLogin()">Login</button>
   <button ion-button block color="primary" (click)="doRegister()">Register</button>
+</ion-content> -->
+<!-- </ion-content> -->
+<ion-content margin="">
+    <ion-row>
+        <ion-col>
+            <ion-list inset="">
+                <ion-icon class="big" name="train">
+                </ion-icon>
+                <ion-item>
+                    <ion-input [(ngModel)]="pnr" class="text-center" name="pnr" placeholder="Enter PNR" required="" type="text" value="">
+                    </ion-input>
+                </ion-item>
+                <ion-item>
+                    <button (click)="checkPnr()" class="submit-btn" full="" ion-button="" padding="" type="submit">
+                        Search
+                    </button>
+                </ion-item>
+            </ion-list>
+        </ion-col>
+    </ion-row>
+
+    <ion-list *ngIf="pnrData.trainname">
+        <ion-list-header>
+           PNR Details
+        </ion-list-header>
+        <ion-item>
+            Train : {{pnrData.trainname}} ( {{pnrData.trainno}} )
+        </ion-item>
+        <ion-item>
+            From : {{pnrData.fromname}}
+        </ion-item>
+        <ion-item>
+            To : {{pnrData.toname}}
+        </ion-item>
+        <ion-item>
+            Departure : {{pnrData.departure}}
+        </ion-item>
+        <ion-item>
+            Arrival : {{pnrData.arrival}}
+        </ion-item>
+
+        
+        <ion-item>
+           No of Passenger: {{pnrData.noofpass}}
+        </ion-item>
+        <ion-item>
+           Date of Journey: {{pnrData.dateofjourney}}
+        </ion-item>
+        <ion-item>
+            <strong>Seat Status</strong>
+          <div *ngFor="let passenger of pnrData.status">
+             <strong>{{passenger.seat}}</strong> > {{passenger.pstatus}} - {{passenger.cstatus}}
+          </div>
+        </ion-item>
+
+    </ion-list>
+
+    
 </ion-content>
